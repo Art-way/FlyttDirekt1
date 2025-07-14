@@ -25,7 +25,8 @@ export function middleware(request) {
 
   // If the host does not start with "www.", redirect to the www version.
   if (!host.startsWith('www.')) {
-    const newHost = `www.${host}`;
+    // const newHost = `www.${host}`;
+    const newHost = `www.${host.replace(/^www\./, '').replace(/:\d+$/, '')}`;
     const newUrl = new URL(request.url);
     newUrl.host = newHost;
     // Use a 308 redirect to preserve the request method
