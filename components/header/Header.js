@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import HeaderTopbar from "../HeaderTopbar/HeaderTopbar";
 import MobileMenu from "../MobileMenu/MobileMenu";
-import Logo from "/images/logo.svg"; // TODO: Change to the correct logo
+import Logo from "/public/images/Logo.svg"; // TODO: Change to the correct logo
 import Image from "next/image";
 
 const Header = (props) => {
