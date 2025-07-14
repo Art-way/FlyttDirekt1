@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5010",
     "postbuild": "node ./scripts/generate-sitemap.js"
   },
   "dependencies": {
