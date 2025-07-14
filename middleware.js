@@ -26,9 +26,13 @@ export function middleware(request) {
   // If the host does not start with "www.", redirect to the www version.
   if (!host.startsWith('www.')) {
     // const newHost = `www.${host}`;
+   // const newHost = `www.${host.replace(/^www\./, '').replace(/:\d+$/, '')}`;
+   // const newUrl = new URL(request.url);
+  //  newUrl.host = newHost;
+
+    const protocol = request.nextUrl.protocol || 'https:'; 
     const newHost = `www.${host.replace(/^www\./, '').replace(/:\d+$/, '')}`;
-    const newUrl = new URL(request.url);
-    newUrl.host = newHost;
+    const newUrl = `${protocol}//${newHost}${request.nextUrl.pathname}${request.nextUrl.search}`;
     // Use a 308 redirect to preserve the request method
     return NextResponse.redirect(newUrl, 308);
   }
