@@ -1,7 +1,8 @@
+// File: components/footer/Footer.js
+
 import React from 'react'
 import Link from "next/link";
 import Logo from '/public/images/footer-logo.svg'
-import Services from '../../api/service';
 import Image from 'next/image';
 
 const ClickHandler = () => {
@@ -36,22 +37,22 @@ const Footer = (props) => {
                             </div>
                         </div>
                         
-                        {/* START: NEW SECTION FOR GUIDES */}
                         <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div className="widget link-widget">
                                 <div className="widget-title">
                                     <h3>Populära Guider</h3>
                                 </div>
                                 <ul>
-                                    <li><Link onClick={ClickHandler} href="/17/28/vad-kostar-flyttfirma-stockholm">Vad kostar en flyttfirma?</Link></li>
-                                    <li><Link onClick={ClickHandler} href="/17/24/guide-till-pianons-vikt">Vad väger ett piano?</Link></li>
-                                    <li><Link onClick={ClickHandler} href="/17/27/rutavdrag-flyttfirma-guide">Allt om RUT-avdrag</Link></li>
-                                    <li><Link onClick={ClickHandler} href="/17/18/basta-flyttfirman-stockholm-tips">Välja bästa flyttfirman</Link></li>
-                                    <li><Link onClick={ClickHandler} href="/17/29/flyttstad-checklista-guide">Checklista för flyttstäd</Link></li>
+                                    {/* *** START: NEW LINK ADDED *** */}
+                                    <li><Link onClick={ClickHandler} href="/flyttfirma-helsingborg/">Flyttfirma Helsingborg</Link></li>
+                                    {/* *** END: NEW LINK ADDED *** */}
+                                    <li><Link onClick={ClickHandler} href="/guider/vad-kostar-flyttfirma-stockholm">Vad kostar en flyttfirma?</Link></li>
+                                    <li><Link onClick={ClickHandler} href="/guider/guide-till-pianons-vikt">Vad väger ett piano?</Link></li>
+                                    <li><Link onClick={ClickHandler} href="/guider/rutavdrag-flyttfirma-guide">Allt om RUT-avdrag</Link></li>
+                                    <li><Link onClick={ClickHandler} href="/guider/basta-flyttfirman-stockholm-tips">Välja bästa flyttfirman</Link></li>
                                 </ul>
                             </div>
                         </div>
-                        {/* END: NEW SECTION FOR GUIDES */}
 
                         <div className="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div className="widget link-widget">
@@ -74,7 +75,7 @@ const Footer = (props) => {
                 <div className="container">
                     <div className="row">
                         <div className="col col-xs-12">
-                            <p className="copyright"> Copyright © 2024 Flyttdirekt.se | Alla rättigheter förbehållna</p>
+                            <p className="copyright"> Copyright © 2025 Flyttdirekt.se | Alla rättigheter förbehållna</p>
                         </div>
                     </div>
                 </div>
