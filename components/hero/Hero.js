@@ -1,7 +1,9 @@
+// File: components/hero/Hero.js
+
 import React from "react";
 import Link from "next/link";
 import VideoModal from '../ModalVideo/VideoModal'
-import simg1 from '/public/images/slider/right-img.jpg' // سنحتفظ بالصورة حالياً
+import simg1 from '/public/images/slider/right-img.jpg'
 import Image from "next/image";
 
 const Hero = () => {
@@ -20,6 +22,12 @@ const Hero = () => {
                             <div className="btns">
                                 <Link href="/kontakt" className="btn theme-btn"><i className="fa fa-angle-double-right"
                                     aria-hidden="true"></i> Begär Kostnadsfri Offert</Link>
+                                
+                                {/* *** START: NEW LINK ADDED *** */}
+                                <p style={{ marginTop: '15px', fontSize: '15px' }}>
+                                    Planerar du en flytt i Skåne? <Link href="/flyttfirma-helsingborg/" style={{ textDecoration: 'underline', fontWeight: 'bold' }}>Läs vår guide för Helsingborg här!</Link>
+                                </p>
+                                {/* *** END: NEW LINK ADDED *** */}
                             </div>
                         </div>
                     </div>
