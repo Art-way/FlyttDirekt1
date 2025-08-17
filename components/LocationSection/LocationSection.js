@@ -1,9 +1,4 @@
-
-// ====================================================================================================
 // File: components/LocationSection/LocationSection.js
-// المسار: components/LocationSection/LocationSection.js
-// الوصف: مكون جديد لعرض شبكة من المدن مع روابط لصفحات الخدمات المحلية.
-// ====================================================================================================
 
 import React from 'react';
 import Link from 'next/link';
@@ -13,9 +8,13 @@ const LocationSection = () => {
     const ClickHandler = () => {
         window.scrollTo(10, 0);
     }
+    
+    // فلترة لعرض أهم المواقع في ستوكهولم
+    const stockholmLocations = locations.filter(loc => 
+        ['stockholm', 'sollentuna', 'nacka', 'taby', 'solna', 'sodermalm', 'bromma'].includes(loc.slug)
+    ).slice(0, 7); // عرض 7 مواقع فقط من ستوكهولم
 
     return (
-        // استخدام نفس كلاسات التنسيق من قسم "WorkSection" للحفاظ على تناسق التصميم
         <section className="wpo-work-section section-padding">
             <div className="container">
                 <div className="row justify-content-center">
@@ -23,14 +22,14 @@ const LocationSection = () => {
                         <div className="wpo-section-title">
                             <span>Våra Områden</span>
                             <h2>Här Jobbar Vi</h2>
-                            <p>Vi är stolta över att erbjuda våra professionella flyttjänster i hela Stockholmsregionen. Hitta din ort nedan och begär en kostnadsfri offert idag.</p>
+                            <p>Vi är stolta över att erbjuda våra professionella flyttjänster i hela Sverige. Hitta din ort nedan eller begär en kostnadsfri offert idag.</p>
                         </div>
                     </div>
                 </div>
                 <div className="wpo-work-wrap">
                     <div className="row">
-                        {/* عرض أول 8 مدن في الصفحة الرئيسية للحفاظ على تصميم نظيف */}
-                        {locations.slice(0, 8).map((location, litem) => (
+                        {/* عرض المواقع المفلترة من ستوكهولم */}
+                        {stockholmLocations.map((location, litem) => (
                             <div className="col-lg-3 col-md-4 col-sm-6 col-12" key={litem}>
                                 <div className="wpo-work-item">
                                     <div className="wpo-work-text">
@@ -41,6 +40,18 @@ const LocationSection = () => {
                                 </div>
                             </div>
                         ))}
+                        
+                        {/* *** START: NEW CUSTOM BOX FOR HELSINGBORG *** */}
+                        <div className="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div className="wpo-work-item" style={{ background: 'var(--theme-primary-color, #3d86f7)', color: '#fff' }}>
+                                <div className="wpo-work-text">
+                                    <h3 style={{ color: '#fff' }}><Link onClick={ClickHandler} href="/flyttfirma-helsingborg/">Helsingborg</Link></h3>
+                                    <p style={{ color: 'rgba(255,255,255,0.8)' }}>Flytt & Fjärrflytt</p>
+                                    <Link className="read-more" style={{ color: '#fff' }} onClick={ClickHandler} href="/flyttfirma-helsingborg/">Läs Mer</Link>
+                                </div>
+                            </div>
+                        </div>
+                        {/* *** END: NEW CUSTOM BOX FOR HELSINGBORG *** */}
                     </div>
                 </div>
             </div>
