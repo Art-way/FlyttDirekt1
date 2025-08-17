@@ -25,7 +25,8 @@ async function generateSitemap() {
         '/foretagsflytt/',
         '/pianoflytt/',
         '/blogg/',
-        '/villkor/' // تم تغييرها من terms
+        '/villkor/',
+        '/flyttfirma-helsingborg/' 
     ];
     
     staticPages.forEach(page => {
